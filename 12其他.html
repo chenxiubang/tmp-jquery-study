@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>其他</title>
+</head>
+<script src="js/jquery.js"></script>
+<body>
+<div>
+
+</div>
+<a hidden="hidden">我是其他</a>
+<div>
+    <a hidden="hidden">你好啊</a>
+</div>
+</body>
+<script>
+    $("div a").show();//获取div下的a标签的dom元素集合 并让他们显示
+    console.log($("div a"));
+    //$(":hidden").show();//让所有属性是hidden的元素都展示,包括注释
+    $("a:hidden").show();//让所有属性是hidden的元素都展示
+</script>
+</html>

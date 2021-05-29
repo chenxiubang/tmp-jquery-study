@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css</title>
+</head>
+<script src="js/jquery.js"></script>
+
+<body>
+  <div></div>
+</body>
+<script>
+  //用css方法来设置样式
+  $("div:first").css("width","200px");
+  $("div:first").css("height","200px");
+  $("div:first").css("background","red");
+
+  //同样支持链式编程
+  $("div:first").css("width","600px").css("background","blue");
+
+  //也可以这样 推荐这样 更直观
+  $("div:first").css({
+      width:"700px",
+      height:"700px",
+      background:"black"
+  })
+
+  //这些属性都是写在属性节点style中
+
+  //需要什么值获取什么值
+  let background = $("div:first").css("background");
+  console.log(background)
+
+
+  //可以通过width获取宽度
+  $("div:first").width("100px");
+  let width = $("div:first").width();
+  console.log(width);
+
+</script>
+</html>

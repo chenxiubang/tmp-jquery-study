@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="js/jquery.js"></script>
+<style>
+    div, nav {
+        width: 30px;
+        height: 30px;
+        background: red;
+        margin-bottom: 10px;
+    }
+</style>
+
+<body>
+
+<div></div>
+<div>你好</div>
+<div id="omen"></div>
+<div><span></span></div>
+<nav></nav>
+<nav></nav>
+</body>
+<script>
+    let $div = $("div:empty");//获得div标签并且没有文本 也没有子元素
+    console.log($div);
+
+    let $div1 = $("div:parent");//有文本内容或者有子元素的
+    console.log($div1);
+
+    let $div2 = $("div:contains('你')");//有文本内容的元素
+    console.log($div2);
+
+    let $div3 = $("div:has('span')");//包含子元素span的
+    console.log($div3);
+</script>
+</html>

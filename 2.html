@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="js/jquery.js"></script>
+<script>
+    <!-- jquery页面加载就执行的函数-->
+    $(document).ready(function () {
+        alert("jquery 页面加载！");
+        //js原生获得img标签并且打印的方法
+        var el = document.getElementsByTagName("img")[0];
+        console.log(el);
+
+        //js原生获得宽度的方式
+        var width = window.getComputedStyle(el).width;
+        console.log("js拿到的宽"+width);
+    })
+    $(function() {
+        //jquery的方式 $一下加上tag的名字就可以
+        var element = $("img")[0];
+        alert("jquery 简写加载！");
+        console.log(element);
+
+        //新版浏览器不支持jquery的这种width方法，应采用width属性
+        // var width = element.width();
+        //而且jquery的入口函数不可以拿到dom元素的宽高，拿到是因为缓存
+        var width = element.width;
+        console.log("jquery拿到的宽"+width);
+    })
+
+
+    /**
+     * 原生js onload函数如果写了多个，后面会覆盖前者，jquery不会
+     */
+</script>
+<body>
+<img src="//gw.alicdn.com/tfs/TB1jwakrbH1gK0jSZFwXXc7aXXa-20-20.png">
+</body>
+</html>

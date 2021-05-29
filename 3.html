@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery冲突问题</title>
+    <!--idea ctrl + alt + insert 可以创建文件 -->
+    <script>
+        //假设引入的其他框架用了$福好
+        var $ = 1;
+    </script>
+    <script src="js/jquery.js"></script>
+    <script>
+        jQuery.noConflict();//释放jquery的$冲突 之后的$都用jQuery代替
+        jQuery(function (){
+            alert("jquery 冲突")
+        })
+    </script>
+    <script>
+        var 马云 = jQuery.noConflict();
+        马云(function (){
+            alert("自定义jquery的 $->马云")
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>

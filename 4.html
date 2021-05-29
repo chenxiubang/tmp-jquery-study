@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery核心函数</title>
+</head>
+<script src="js/jquery.js"></script>
+<script>
+    // $()就是jqeury核心函数
+    //可以接受参数 字符串 代码片段 dom元素 字符串选择器
+
+    let $omen = $(".omen");//选择器
+    console.log($omen);
+
+    let $h1 = $("<h1>omen</h1>");//传入一个代码片段，创建一个dom元素
+    console.log($h1);
+
+
+</script>
+<body>
+    <nav class="omen"></nav>
+    <nav class="omen2"></nav>
+    <span id="omen3">我是空格</span>
+</body>
+<script>
+    let $1 = $(document.getElementById("omen3"));//传入一个dom元素
+    console.log(document.getElementById("omen3"))//打印原生js的dom对象
+    console.log($1);//打印经过jquery包装后的dom对象，简而言之就是个伪数组
+</script>
+</html>

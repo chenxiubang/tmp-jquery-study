@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery事件</title>
+</head>
+<script src="js/jquery.js"></script>
+<body>
+<button id="omen">我是按钮</button>
+<button class="omen">我是第二个按钮</button>
+</body>
+<script>
+    //jquery事件绑定 第一种方式
+    $("button").click(function () {
+        alert("hello world");
+    })
+
+    //第二种是on+参数的形式
+    $("button").on("click", function () {
+        alert("hello world");
+    })
+
+    //jquery的事件可以多个添加 且不会覆盖
+
+    $("#omen").mouseenter(function () {
+        alert("哈哈哈 你移动过来了");
+    })
+
+    //可以使用off移除事件
+    //off()不传递参数移除所有事件
+    // $("#omen").off();
+
+    $("#omen").off("click");//这个是移除所有click事件
+
+    //定义一个函数
+    const f1 = function () {
+        alert("我是第二个按钮的点击事件1");
+    }
+
+    //也是定义一个函数
+    function test2() {
+        alert("我是第二个按钮的点击事件2")
+    }
+
+    //两种方式获得class为omen第一个元素设置click事件
+    $(".omen:first").on("click",f1);
+    $(".omen").first().click(test2);
+
+    $("button:eq(1)").off("click",f1);//我移除了click事件的f1
+
+
+
+</script>
+</html>

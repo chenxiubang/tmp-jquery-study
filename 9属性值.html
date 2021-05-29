@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性值</title>
+</head>
+<style>
+  dit {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    background: red;
+  }
+</style>
+<script src="js/jquery.js"></script>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<input type="text">
+
+</body>
+<script>
+  $("div:first").html("<h1>你好啊</h1>")//用html可以解析html标记
+  $("div:eq(1)").text("<h1>你好啊</h1>")
+
+  //如果html() 或者text() 方法中不传递值 那么就是 获取
+  let html = $("div:first").html();
+  let text = $("div:first").text();
+  console.log(html);
+  console.log(text);
+
+  //val给单标签例如input表单设置value值
+  $("input").first().val("我是你爹");
+  let val = $("input:first").val();
+  console.log(val);
+
+</script>
+</html>

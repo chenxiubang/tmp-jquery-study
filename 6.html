@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery的Foreach</title>
+</head>
+<script src="js/jquery.js"></script>
+<script>
+
+    $.holdReady(true);//暂停ready函数执行
+    $(function (){
+        alert("暂停的ready事件又发生了")
+    })
+
+    const arr = [100, 2200, 1113, 2224, 2225, 52226];
+    //js原生的foreach循环
+    //遍历数组不能遍历这种 [0:1,2:3]这种伪书组
+    arr.forEach(function (value, index) {
+        console.log("value is " + value + "  index is" + index);
+    })
+
+    //注意jquery的遍历 两个参数和原生的是反的
+    const eachResult = $.each(arr, function(index,value) {
+        console.log("我是jquery的each方法：value is " + value + "  index is" + index);
+    })
+
+    console.log("=========================================================")
+
+    //在注意这里 jquerymap遍历的参数又和each不一样
+    const mapResult = $.map(arr, function (value, index) {
+        console.log("我是jquery的map方法 value is " + value + "  index is" + index);
+        // return value+index;
+    })
+
+    //区别jquery的静态方法map，返回空数组，而静态方法foreach遍历谁返回谁
+    //但是map方法可以在回调中对遍历的数组进行操作并且返回
+    console.log(eachResult);
+    console.log(mapResult);
+
+    function readyAgain() {
+        $.holdReady(false);
+    }
+
+</script>
+<body>
+<input type="button" value="执行ready事件把" onclick="readyAgain()">
+</body>
+
+<script>
+    //jquery本质是个匿名函数 定义立马执行的函数
+    const result =$.isFunction(jQuery);
+    console.log(result);
+
+    const myFunction = function (){
+        console.log("立即执行")
+    }
+    myFunction();
+
+    (function (){
+        console.log("立即执行2")
+    })();
+
+
+</script>
+</html>

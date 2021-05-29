@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性节点</title>
+</head>
+<script src="js/jquery.js"></script>
+
+<body>
+
+<span class="omen">1</span>
+<span class="omen">2</span>
+<span class="omen">3</span>
+
+</body>
+<script>
+
+    let first = $("span:first");//获得第一个span标签的dom对象
+    let second = $("span:eq(1)");//获得第二个（索引）
+    let last = $("span:last");//获得最后一个span标签的dom对象
+
+    let first1 = $("span").first();//用first方法获得第一个
+
+    console.log(first);
+    console.log(second);
+    console.log(last);
+
+    console.log(first1)
+
+    let attr = $("span").attr("class");//$()获得无论多少个元素，attr都只会拿第一个元素的属性节点
+    console.log(attr)
+
+    //attr如果传递的参数是两个 就是设置
+    //如果是设置的话 找到多少个符合的元素就会全部更改属性节点
+    $("span").attr("class","hhh");
+
+    //如果这个元素本身不存在，就添加上
+    $("span").attr("ok","helloworld");
+
+    //找到符合元素的属性节点全部删除
+    $("span").removeAttr("class");
+    //如果要删除多个 就用空格隔开
+    $("span").removeAttr("class ok");
+</script>
+</html>
